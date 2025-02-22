@@ -13,6 +13,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@reduxjs/toolkit": "^2.5.1",
     "@tailwindcss/vite": "^4.0.8",
     "react": "^19.0.0",
