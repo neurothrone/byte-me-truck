@@ -1,10 +1,18 @@
-export default function PrimaryButton({children, onClick}: { children: React.ReactNode; onClick: () => void }) {
+import { PropsWithChildren } from "react";
+
+interface PrimaryButtonProps {
+  onClick: () => void;
+}
+
+const PrimaryButton = ({children, onClick}: PropsWithChildren<PrimaryButtonProps>) => {
   return (
     <button
-      className="relative mt-3 w-full bg-[#F4B400] hover:bg-[#E0A000] active:bg-[#C98F00] text-black font-bold py-1 rounded-lg text-sm transition duration-200"
+      className="relative mt-3 w-full bg-primary hover:bg-primary-hover active:bg-primary-active text-black font-bold py-1 rounded-lg text-sm transition duration-200"
       onClick={onClick}
     >
       {children}
     </button>
   );
 }
+
+export default PrimaryButton;
