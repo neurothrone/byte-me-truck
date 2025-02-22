@@ -1,0 +1,36 @@
+@VITE_API_URL = ...
+@VITE_API_KEY = ...
+@VITE_API_TENANT_ID = ...
+
+
+### Get Menu Items
+GET {{VITE_API_URL}}/menu
+x-zocom: {{VITE_API_KEY}}
+
+### Get a Single Menu Item by ID
+GET {{VITE_API_URL}}/menu/1
+x-zocom: {{VITE_API_KEY}}
+
+### Place an Order
+POST {{VITE_API_URL}}/{{VITE_API_TENANT_ID}}/orders
+Content-Type: application/json
+x-zocom: {{VITE_API_KEY}}
+
+{
+  "items": [
+    1,
+    2
+  ]
+}
+
+### Get All Orders
+GET {{VITE_API_URL}}/{{VITE_API_TENANT_ID}}/orders
+x-zocom: {{VITE_API_KEY}}
+
+### Get a Single Order by ID
+GET {{VITE_API_URL}}/{{VITE_API_TENANT_ID}}/orders/non-existing-id
+x-zocom: {{VITE_API_KEY}}
+
+### Get Receipt for an Order by ID
+GET {{VITE_API_URL}}/receipts/non-existing-id
+x-zocom: {{VITE_API_KEY}}
