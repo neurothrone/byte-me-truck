@@ -1,0 +1,6 @@
+{
+  "name": "@byte-me-truck/badge",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts"
+}
