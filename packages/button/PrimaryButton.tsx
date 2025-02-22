@@ -1,13 +1,18 @@
 import { PropsWithChildren } from "react";
+import clsx from "clsx";
 
 interface PrimaryButtonProps {
   onClick: () => void;
+  className?: string;
 }
 
-const PrimaryButton = ({children, onClick}: PropsWithChildren<PrimaryButtonProps>) => {
+const PrimaryButton = ({children, onClick, className}: PropsWithChildren<PrimaryButtonProps>) => {
   return (
     <button
-      className="relative mt-3 w-full bg-primary hover:bg-primary-hover active:bg-primary-active text-black font-bold py-1 rounded-lg text-sm transition duration-200"
+      className={clsx(
+        "p-2 bg-primary hover:bg-primary-hover active:bg-primary-active text-black font-bold rounded-lg text-sm transition duration-200",
+        className
+      )}
       onClick={onClick}
     >
       {children}
