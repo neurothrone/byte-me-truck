@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartReducer from "../redux/cart-slice";
 import { baseApi } from "../api/base-api.ts";
+import cartReducer from "../redux/cart-slice";
 // RTK Query needs these imports for the API slices to be recognized
 import "../api/menu-api";
 import "../api/order-api";
