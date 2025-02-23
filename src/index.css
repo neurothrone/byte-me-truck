@@ -2,18 +2,18 @@
 
 @theme {
   --color-primary: #F4B400;
+  --color-primary-hover: #E0A000;
+  --color-primary-active: #C98F00;
+  --color-secondary: #D5C2A1;
+  --color-secondary-hover: #C2A98E;
   --color-background: #18140F;
   --color-background-accent: #3E2C1C;
-  --color-card-background: #E7D7C1;
+  --color-primary-border: #6B4F36;
+  --color-prominent-light: #E7D7C1;
+  --color-muted-white: #B8A899;
   --color-navbar: #3B2415;
-  --color-cart-button: #5A3A24;
-  --color-cart-hover: #6B472B;
-  --color-cart-active: #7C5232;
+  --color-cart-button: #F5D67A;
+  --color-cart-hover: #E9B949;
+  --color-cart-active: #D89A29;
   --color-spicy-red: #D72638;
-}
-
-@layer utilities {
-  .bg-gradient-theme {
-    background: linear-gradient(to bottom, var(--background), var(--background-accent));
-  }
 }
