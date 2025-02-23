@@ -3,7 +3,7 @@ export interface ReceiptItem {
   name: string;
   type: "wonton" | "dip" | "drink";
   quantity: number;
-  price: number;
+  price: number; // This is the total cost, the API already calculates price * quantity
 }
 
 export interface Receipt {
