@@ -9,7 +9,8 @@ interface CartTotalProps {
 
 const CartTotal = ({totalPrice, isLoading, onClearCart, onCheckout}: CartTotalProps) => {
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-secondary-background shadow-lg border-t-2 border-primary-border rounded-t-4xl">
+    <div
+      className="fixed bottom-0 inset-x-0 bg-secondary-background shadow-lg border-t-2 border-primary-border rounded-t-4xl">
       <div className="max-w-3xl mx-auto px-6 py-4">
         <div className="flex justify-between text-lg font-bold text-prominent-light">
           <p>Totalt</p>
@@ -23,7 +24,12 @@ const CartTotal = ({totalPrice, isLoading, onClearCart, onCheckout}: CartTotalPr
             Töm kundvagnen
           </DestructiveButton>
 
-          <PrimaryButton className="w-full py-3" onClick={onCheckout}>
+          <PrimaryButton
+            className="w-full py-3"
+            onClick={onCheckout}
+            isLoading={isLoading}
+            disabled={isLoading}
+          >
             {isLoading ? "Behandlar din order..." : "TAKE MY MONEY!"}
           </PrimaryButton>
         </div>
