@@ -4,7 +4,7 @@ import CartPage from "../components/features/cart/CartPage.tsx";
 import OrderPage from "../components/features/order/OrderPage.tsx";
 import ReceiptPage from "../components/features/receipt/ReceiptPage.tsx";
 
-export default function AppRouter() {
+const AppRouter = () => {
   return (
     <Router>
       <Routes>
@@ -16,3 +16,5 @@ export default function AppRouter() {
     </Router>
   );
 }
+
+export default AppRouter;
