@@ -1,13 +1,15 @@
-import { useGetMenuQuery } from "../../../../api/menu-api.ts";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../../../redux/cart-slice.ts";
+import { MenuItem } from "../../../../types/menu.ts";
 import { RootState } from "../../../../redux/store.ts";
 import { Badge } from "@byte-me-truck/badge";
 import { PlusIcon } from "@heroicons/react/24/solid";
 
-const DrinksSection = () => {
-  const {data: menu} = useGetMenuQuery();
-  const drinks = menu?.filter((item) => item.type === "drink") ?? [];
+interface DrinksSectionProps {
+  drinks: MenuItem[];
+}
+
+const DrinksSection = ({drinks}: DrinksSectionProps) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -16,8 +18,7 @@ const DrinksSection = () => {
       {drinks.map((drink) => {
         const quantity = cartItems.find((item) => item.id === drink.id)?.quantity || 0;
         return (
-          <div key={drink.id}
-               className="p-3 relative flex justify-between items-center bg-white rounded-lg shadow-sm">
+          <div key={drink.id} className="p-3 relative flex justify-between items-center bg-white rounded-lg shadow-sm">
             <p className="text-lg font-semibold">{drink.name}</p>
 
             <Badge count={quantity}/>
@@ -33,6 +34,6 @@ const DrinksSection = () => {
       })}
     </div>
   );
-}
+};
 
 export default DrinksSection;

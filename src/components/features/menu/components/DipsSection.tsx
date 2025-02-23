@@ -1,12 +1,14 @@
-import { useGetMenuQuery } from "../../../../api/menu-api.ts";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../../../redux/cart-slice.ts";
+import { MenuItem } from "../../../../types/menu.ts";
 import { RootState } from "../../../../redux/store.ts";
 import { Badge } from "@byte-me-truck/badge";
 
-const DipsSection = () => {
-  const {data: menu} = useGetMenuQuery();
-  const dips = menu?.filter((item) => item.type === "dip") ?? [];
+interface DipsSectionProps {
+  dips: MenuItem[];
+}
+
+const DipsSection = ({dips}: DipsSectionProps) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -30,6 +32,6 @@ const DipsSection = () => {
       })}
     </div>
   );
-}
+};
 
 export default DipsSection;

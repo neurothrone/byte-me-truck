@@ -1,13 +1,11 @@
-import { useGetMenuQuery } from "../../../../api/menu-api.ts";
 import WontonCard from "./WontonCard.tsx";
+import { MenuItem } from "../../../../types/menu.ts";
 
-const WontonsSection = () => {
-  const {data: menu, error, isLoading} = useGetMenuQuery();
-  const wontons = menu?.filter((item) => item.type === "wonton") ?? [];
+interface WontonsSectionProps {
+  wontons: MenuItem[];
+}
 
-  if (isLoading) return <p className="text-center">Laddar meny...</p>;
-  if (error) return <p className="text-red-500 text-center">Kunde inte ladda menyn.</p>;
-
+const WontonsSection = ({wontons}: WontonsSectionProps) => {
   return (
     <div className="space-y-4">
       {wontons.map((item) => (
@@ -15,6 +13,6 @@ const WontonsSection = () => {
       ))}
     </div>
   );
-}
+};
 
 export default WontonsSection;
