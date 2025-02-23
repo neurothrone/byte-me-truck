@@ -16,11 +16,11 @@ const MenuPage = () => {
       {/* Push content down so it's not hidden under the sticky header */}
       <div className="mt-20 mx-auto max-w-3xl">
         {isLoading ? (
-          <TextMessage className="text-center" text="Laddar meny..."/>
+          <TextMessage className="text-center text-prominent-light" text="Laddar meny..."/>
         ) : error ? (
           <TextMessage className="text-center text-red-500" text="Kunde inte ladda menyn."/>
         ) : !data || data.length === 0 ? (
-          <TextMessage className="text-center text-gray-500" text="Menyn är för tillfället tom."/>
+          <TextMessage className="text-center text-prominent-light" text="Menyn är för tillfället tom."/>
         ) : (
           <article className="space-y-6">
             <MenuSection title="Wontons">
