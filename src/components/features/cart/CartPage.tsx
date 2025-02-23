@@ -15,7 +15,8 @@ const CartPage = () => {
   const [placeOrder, {isLoading}] = usePlaceOrderMutation();
 
   const handleCheckout = async () => {
-    if (cart.length === 0) return;
+    if (cart.length === 0)
+      return;
 
     try {
       const expandedItems = cart.flatMap((item) => Array(item.quantity).fill(item.id));

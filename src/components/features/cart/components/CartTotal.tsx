@@ -20,15 +20,19 @@ const CartTotal = ({totalPrice, isLoading, onClearCart, onCheckout}: CartTotalPr
         <hr className="my-4 border-t-2 border-dashed border-primary-border"/>
 
         <div className="flex gap-4">
-          <DestructiveButton className="py-3 w-full" onClick={onClearCart}>
+          <DestructiveButton
+            className="py-3 w-full"
+            disabled={isLoading}
+            onClick={onClearCart}
+          >
             Töm kundvagnen
           </DestructiveButton>
 
           <PrimaryButton
             className="w-full py-3"
-            onClick={onCheckout}
             isLoading={isLoading}
             disabled={isLoading}
+            onClick={onCheckout}
           >
             {isLoading ? "Behandlar din order..." : "TAKE MY MONEY!"}
           </PrimaryButton>
