@@ -14,7 +14,7 @@ const MenuPage = () => {
       <StickyNavbar/>
 
       {/* Push content down so it's not hidden under the sticky header */}
-      <div className="mt-20 mx-auto max-w-3xl space-y-6">
+      <div className="mt-20 mx-auto max-w-3xl">
         {isLoading ? (
           <TextMessage className="text-center" text="Laddar meny..."/>
         ) : error ? (
@@ -22,7 +22,7 @@ const MenuPage = () => {
         ) : !data || data.length === 0 ? (
           <TextMessage className="text-center text-gray-500" text="Menyn är för tillfället tom."/>
         ) : (
-          <>
+          <article className="space-y-6">
             <MenuSection title="Wontons">
               <WontonsSection wontons={data.filter((item) => item.type === "wonton")}/>
             </MenuSection>
@@ -32,7 +32,7 @@ const MenuPage = () => {
             <MenuSection title="Dips">
               <DipsSection dips={data.filter((item) => item.type === "dip")}/>
             </MenuSection>
-          </>
+          </article>
         )}
       </div>
     </div>
