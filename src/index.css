@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&family=Orbitron:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -19,4 +20,13 @@
   --color-spicy-red: #D72638;
   --color-spicy-red-hover: #B61C2B;
   --color-spicy-red-active: #9E1823;
+}
+
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Orbitron", sans-serif;
 }
