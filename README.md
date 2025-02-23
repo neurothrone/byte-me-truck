@@ -6,6 +6,14 @@ Byte Me Truck is a futuristic and slightly chaotic food truck where wontons, dri
 high-tech street food fantasy. Whether you’re here for a crispy Karlstad wonton or a Sweet Chili dip that makes your API
 rate limit cry, we’ve got you covered.
 
+## Live Demo
+
+Hungry? **Order some digital wontons now!**
+
+👉 **[Byte Me Truck](https://byte-me-truck.netlify.app)**
+
+⚠️ Warning: Side effects may include uncontrollable cravings, API throttling, and questioning your life choices.
+
 ## Tech Stack
 
 ### **Frontend**
