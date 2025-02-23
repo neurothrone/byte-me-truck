@@ -1,23 +1,26 @@
-import { PropsWithChildren } from "react";
 import clsx from "clsx";
+import BaseButton from "./BaseButton";
+import { PropsWithChildren } from "react";
 
-interface DestructiveButtonProps {
+interface DestructiveButtonProps extends PropsWithChildren {
   onClick: () => void;
   className?: string;
+  disabled?: boolean;
+  isLoading?: boolean;
 }
 
-const DestructiveButton = ({children, onClick, className}: PropsWithChildren<DestructiveButtonProps>) => {
+const DestructiveButton = ({children, ...props}: DestructiveButtonProps) => {
   return (
-    <button
+    <BaseButton
+      {...props}
       className={clsx(
-        "p-2 bg-spicy-red hover:bg-spicy-red-hover active:bg-spicy-red-active text-white font-bold rounded-lg text-sm transition duration-200",
-        className
+        "bg-spicy-red hover:bg-spicy-red-hover active:bg-spicy-red-active text-white",
+        props.className
       )}
-      onClick={onClick}
     >
       {children}
-    </button>
+    </BaseButton>
   );
-}
+};
 
 export default DestructiveButton;
