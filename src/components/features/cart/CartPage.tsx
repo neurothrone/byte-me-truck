@@ -30,7 +30,7 @@ const CartPage = () => {
       const orderResponse = await placeOrder({items: expandedItems}).unwrap();
 
       dispatch(clearCart());
-      navigate(`/order/${orderResponse.order.id}`);
+      navigate(`/orders/${orderResponse.order.id}`);
     } catch {
       setErrorMessage("Något gick fel vid beställningen. Försök igen.");
     }
