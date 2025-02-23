@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../redux/store.ts";
 import { removeItem, clearCart } from "../../../redux/cart-slice.ts";
@@ -7,6 +8,7 @@ import { usePlaceOrderMutation } from "../../../api/order-api.ts";
 import PageHeader from "../../shared/PageHeader.tsx";
 import CartList from "./components/CartList.tsx";
 import CartTotal from "./components/CartTotal.tsx";
+import TextMessage from "../../shared/TextMessage.tsx";
 
 const CartPage = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -14,19 +16,23 @@ const CartPage = () => {
   const navigate = useNavigate();
   const [placeOrder, {isLoading}] = usePlaceOrderMutation();
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const handleCheckout = async () => {
     if (cart.length === 0)
       return;
 
     try {
+      // throw new Error("Simulate error");
+      setErrorMessage(null);
+
       const expandedItems = cart.flatMap((item) => Array(item.quantity).fill(item.id));
       const orderResponse = await placeOrder({items: expandedItems}).unwrap();
 
       dispatch(clearCart());
       navigate(`/order/${orderResponse.order.id}`);
-    } catch (error) {
-      console.error("Checkout failed:", error);
-      alert("Something went wrong. Please try again.");
+    } catch {
+      setErrorMessage("Något gick fel vid beställningen. Försök igen.");
     }
   };
 
@@ -34,9 +40,9 @@ const CartPage = () => {
     <div className="min-h-screen p-6 flex flex-col bg-gradient-to-b from-background to-background-accent">
       <PageHeader title="Tillbaka till Meny" icon={ShoppingCartIcon}/>
 
-      <CartList
-        items={cart}
-        onRemoveItem={(id) => dispatch(removeItem(id))}/>
+      {errorMessage && <TextMessage className="text-center text-red-500 mb-4" text={errorMessage}/>}
+
+      <CartList items={cart} onRemoveItem={(id) => dispatch(removeItem(id))}/>
 
       <CartTotal
         isLoading={isLoading}
@@ -46,6 +52,6 @@ const CartPage = () => {
       />
     </div>
   );
-}
+};
 
 export default CartPage;
