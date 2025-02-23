@@ -26,7 +26,7 @@ const DipsSection = ({dips}: DipsSectionProps) => {
         />
       )}
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {dips.map((dip) => {
           const quantity = cartItems.find((item) => item.id === dip.id)?.quantity || 0;
           return (
