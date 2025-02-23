@@ -13,7 +13,7 @@ const OrderFooter = ({orderId}: OrderFooterProps) => {
       <div className="mx-auto px-6 py-4 max-w-3xl">
         <PrimaryButton
           className="w-full py-3"
-          onClick={() => orderId && navigate(`/receipts/${orderId}`)} // ✅ Now using navigate()
+          onClick={() => orderId && navigate(`/receipts/${orderId}`)}
         >
           SE KVITTO
         </PrimaryButton>
