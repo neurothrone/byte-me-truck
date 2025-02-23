@@ -4,6 +4,7 @@ import { ReceiptPercentIcon } from "@heroicons/react/24/solid";
 import ReceiptItem from "./components/ReceiptItem.tsx";
 import ReceiptTotals from "./components/ReceiptTotal.tsx";
 import PageHeader from "../../shared/PageHeader.tsx";
+import TextMessage from "../../shared/TextMessage.tsx";
 import logo from "../../../assets/byte-me-truck-logo.webp";
 
 const ReceiptPage = () => {
@@ -14,11 +15,15 @@ const ReceiptPage = () => {
     <div className="min-h-screen p-6 bg-gradient-to-b from-background to-background-accent text-prominent-light">
       <PageHeader title="Tillbaka till Meny" icon={ReceiptPercentIcon}/>
 
-      <div className="w-full px-6 py-6 bg-tertiary-background border border-primary-border rounded-lg shadow-md text-center">
+      <div
+        className="w-full px-6 py-6 bg-tertiary-background border border-primary-border rounded-lg shadow-md text-center">
         {isLoading ? (
-          <p className="text-lg">Laddar kvitto...</p>
+          <TextMessage text="Laddar kvitto..."/>
         ) : error ? (
-          <p className="text-lg text-red-500">Det gick inte att ladda kvittot.</p>
+          <TextMessage
+            className="text-red-500"
+            text="Det gick inte att ladda kvittot."
+          />
         ) : receiptData?.receipt ? (
           <article>
             <div className="flex justify-center mb-4">
@@ -37,7 +42,10 @@ const ReceiptPage = () => {
             <ReceiptTotals total={receiptData.receipt.orderValue}/>
           </article>
         ) : (
-          <p className="text-lg text-red-500">Kvittodetaljer saknas!</p>
+          <TextMessage
+            className="text-red-500"
+            text="Kvittodetaljer saknas!"
+          />
         )}
       </div>
     </div>
