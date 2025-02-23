@@ -1,5 +1,6 @@
 import CartItemCard from "./CartItemCard.tsx";
 import { CartItem } from "../../../../types/cart.ts";
+import TextMessage from "../../../shared/TextMessage.tsx";
 
 interface CartListProps {
   items: CartItem[];
@@ -10,7 +11,10 @@ const CartList = ({items, onRemoveItem}: CartListProps) => {
   return (
     <div className="pb-36 flex-grow overflow-y-auto space-y-4">
       {items.length === 0 ? (
-        <p className="text-center text-lg text-prominent-light">Din kundvagn är tom.</p>
+        <TextMessage
+          className="text-center text-prominent-light"
+          text="Din kundvagn är tom."
+        />
       ) : (
         items.map((item) => (
           <CartItemCard
