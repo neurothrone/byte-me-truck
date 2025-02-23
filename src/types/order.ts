@@ -1,6 +1,8 @@
+import { MenuItemType, OrderState } from "./shared.ts";
+
 export interface OrderItem {
   id: number;
-  type: "wonton" | "dip" | "drink";
+  type: MenuItemType;
   name: string;
   description: string;
   price: number;
@@ -13,7 +15,7 @@ export interface Order {
   items: OrderItem[];
   orderValue: number;
   eta: string;
-  state: "waiting" | "processing" | "done";
+  state: OrderState;
 }
 
 // Request for creating a new order
