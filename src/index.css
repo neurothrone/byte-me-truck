@@ -8,12 +8,15 @@
   --color-secondary-hover: #C2A98E;
   --color-background: #18140F;
   --color-background-accent: #3E2C1C;
+  --color-secondary-background: #2A1A10;
+  --color-tertiary-background: #3B2415;
   --color-primary-border: #6B4F36;
   --color-prominent-light: #E7D7C1;
   --color-muted-white: #B8A899;
-  --color-navbar: #3B2415;
   --color-cart-button: #F5D67A;
   --color-cart-hover: #E9B949;
   --color-cart-active: #D89A29;
   --color-spicy-red: #D72638;
+  --color-spicy-red-hover: #B61C2B;
+  --color-spicy-red-active: #9E1823;
 }

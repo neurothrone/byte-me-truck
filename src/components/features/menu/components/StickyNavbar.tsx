@@ -12,7 +12,7 @@ const StickyNavbar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 mx-auto py-4 px-6 bg-navbar shadow-md flex justify-between items-center max-w-3xl border-b-2 border-primary-border rounded-b-4xl z-50">
+      className="fixed top-0 left-0 right-0 mx-auto py-4 px-6 bg-tertiary-background shadow-md flex justify-between items-center max-w-3xl border-b-2 border-primary-border rounded-b-4xl z-50">
       <img src={logo} alt="Byte Me Truck Logo" className="w-12 h-12 rounded-lg"/>
 
       <Link

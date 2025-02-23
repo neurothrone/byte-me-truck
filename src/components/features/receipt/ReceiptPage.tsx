@@ -14,7 +14,7 @@ const ReceiptPage = () => {
     <div className="min-h-screen p-6 bg-gradient-to-b from-background to-background-accent text-prominent-light">
       <PageHeader title="Tillbaka till Meny" icon={ReceiptPercentIcon}/>
 
-      <div className="w-full px-6 py-6 bg-navbar border border-primary-border rounded-lg shadow-md text-center">
+      <div className="w-full px-6 py-6 bg-tertiary-background border border-primary-border rounded-lg shadow-md text-center">
         {isLoading ? (
           <p className="text-lg">Laddar kvitto...</p>
         ) : error ? (
