@@ -37,7 +37,7 @@ Hungry? **Order some digital wontons now!**
 
 - **React Router v7** – Seamless page navigation
 
-### **Backend & Deployment**
+### **Backend**
 
 - **AWS-Hosted API** – Handles orders with the efficiency of a Michelin-starred DevOps Engineer
 
