@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# Byte Me Truck – Wontons so good, even your API requests will come back for more.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Byte Me Truck is a futuristic and slightly chaotic food truck where wontons, drinks, and dips collide in a
+high-tech street food fantasy. Whether you’re here for a crispy Karlstad wonton or a Sweet Chili dip that makes your API
+rate limit cry, we’ve got you covered.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+### **Frontend**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React 19** – The latest and greatest for our high-performance food ordering UI
+- **TypeScript** – Because type safety is like food safety: important
+- **Vite** – Lightning-fast dev environment
 
-- Configure the top-level `parserOptions` property like this:
+### **Styling & UI**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Tailwind CSS v4** – Sleek, modern, and no more writing custom CSS
+- **@heroicons/react** – Beautiful icons that scream `We know what we're doing`
+- **clsx** – Because conditional classNames shouldn’t be a headache
+
+### **State Management**
+
+- **Redux Toolkit & RTK Query** – Keeping track of your cart like a pro
+- **React Redux** – So your wontons persist even when you navigate away
+
+### **Routing**
+
+- **React Router v7** – Seamless page navigation
+
+### **Backend & Deployment**
+
+- **AWS-Hosted API** – Handles orders with the efficiency of a Michelin-starred DevOps Engineer
+
+## Setup
+
+### Clone the repo
+
+```sh
+git clone https://github.com/neurothrone/byte-me-truck.git
+cd byte-me-truck
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+npm install
 ```
+
+### Configure Environment Variables
+
+Create a `.env` file in the root directory and configure:
+
+```text
+VITE_API_HEADER_KEY=your-api-header-key
+VITE_API_URL=https://your-api-url.com
+VITE_API_KEY=your-api-key
+VITE_API_TENANT_ID=your-tenant-id
+```
+
+### Start the App
+
+```sh
+npm run dev
+```
+
+## Images
+
+### Mobile View (iPhone 14 Pro Max)
+
+#### Menu Page
+
+![Menu Page](./assets/menu-page.png)
+
+#### Cart Page
+
+![Cart Page](./assets/cart-page.png)
+
+#### Order Page
+
+![Order Page](./assets/order-page.png)
+
+#### Receipt Page
+
+![Receipt Page](./assets/receipt-page.png)
